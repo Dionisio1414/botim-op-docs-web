@@ -40,7 +40,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
 
   routeRules: {
-    '/': { prerender: true },
+    '/': { swr: 3600 },
     '/account/**': { ssr: true, robots: false },
     '/tickets/**': { ssr: false, robots: false },
     '/admin/**': { ssr: false, robots: false },
