@@ -39,12 +39,9 @@ export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
   compatibilityDate: '2025-01-01',
 
-  routeRules: {
-    '/': { swr: 3600 },
-    '/account/**': { ssr: true, robots: false },
-    '/tickets/**': { ssr: false, robots: false },
-    '/admin/**': { ssr: false, robots: false },
-    '/login': { robots: false },
-    '/register': { robots: false },
+  vite: {
+    optimizeDeps: {
+      include: ['debug'],
+    },
   },
 })

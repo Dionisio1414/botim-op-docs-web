@@ -1,11 +1,14 @@
 {
-  "name": "docs-site",
+  "name": "botim-op-docs-web",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
+    "start": "PORT=8080 node .output/server/index.mjs",
     "preview": "nuxt preview",
-    "clean": "nuxt cleanup"
+    "clean": "nuxt cleanup",
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@guolao/vue-monaco-editor": "^1.6.0",
@@ -13,14 +16,9 @@
     "@nuxt/ui": "^4.5.0",
     "@nuxtjs/mdc": "^0.14.0",
     "@nuxtjs/sitemap": "^7.6.0",
+    "monaco-editor": "^0.55.1",
     "nuxt": "^4.3.1",
     "tailwindcss": "^4.2.1"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp",
-      "@parcel/watcher"
-    ]
-  }
+  "packageManager": "yarn@4.13.0+sha512.5c20ba010c99815433e5c8453112165e673f1c7948d8d2b267f4b5e52097538658388ebc9f9580656d9b75c5cc996f990f611f99304a2197d4c56d21eea370e7"
 }

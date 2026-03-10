@@ -1,0 +1,11 @@
+include:
+  - project: 'ops/ops-ci'
+    ref: 'master'
+    file: "containerization/nodejs-bookworm-slim/pipelines/nodejs22.yml"
+
+variables:
+  CICD_IMAGE_GROUP: "open"
+  CICD_NODE_TARGET_DIR: "."
+  CICD_NODE_COREPACK_ENABLED: "true"
+  CICD_NODE_PACKAGE_MANAGER: "yarn"
+  CICD_NODE_BUILD_SCRIPT: "build"

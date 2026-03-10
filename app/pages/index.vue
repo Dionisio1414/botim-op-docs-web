@@ -1,6 +1,14 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
+const latestPosts = ref<Array<{ id: number, title: string, body: string }>>([])
+
+onMounted(async () => {
+  latestPosts.value = await $fetch('https://jsonplaceholder.typicode.com/posts', {
+    params: { _limit: 3 },
+  })
+})
+
 const categories = [
   {
     title: 'Guides',
@@ -101,6 +109,33 @@ const features = [
             {{ cat.description }}
           </p>
         </NuxtLink>
+      </div>
+    </section>
+
+    <!-- Latest Posts (from JSONPlaceholder API) -->
+     <pre>
+      {{ latestPosts }}
+     </pre>
+    <section v-if="latestPosts?.length" class="mx-auto max-w-5xl px-6 py-16">
+      <h2 class="text-center text-2xl font-bold text-(--ui-text-highlighted)">
+        Latest Updates
+      </h2>
+      <p class="mt-2 text-center text-(--ui-text-muted)">
+        Recent posts from the community.
+      </p>
+      <div class="mt-10 grid gap-6 sm:grid-cols-3">
+        <div
+          v-for="post in latestPosts"
+          :key="post.id"
+          class="rounded-xl border border-(--ui-border) p-6"
+        >
+          <h3 class="text-lg font-semibold capitalize text-(--ui-text-highlighted)">
+            {{ post.id }}
+          </h3>
+          <p class="mt-2 line-clamp-3 text-sm text-(--ui-text-muted)">
+            {{ post.body }}
+          </p>
+        </div>
       </div>
     </section>
 
