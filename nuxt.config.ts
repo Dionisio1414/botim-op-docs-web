@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     '@nuxtjs/mdc',
   ],
 
+  css: ['~/assets/css/main.css'],
+
   future: { compatibilityVersion: 4 },
 
   content: {
