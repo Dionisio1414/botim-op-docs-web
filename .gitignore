@@ -5,13 +5,9 @@
 .nitro
 .cache
 dist
-.claude
 
 # Node dependencies
 node_modules
-
-# Yarn
-.yarn/install-state.gz
 
 # Logs
 logs
@@ -21,30 +17,8 @@ logs
 .DS_Store
 .fleet
 .idea
-.eslintcache
 
 # Local env files
 .env
 .env.*
 !.env.example
-
-# npm pack
-*.tgz
-
-# Temp files
-.tmp
-.profile
-*.0x
-
-# VSCode
-.history
-.vscode
-
-# Amplify
-.amplify-hosting
-
-# Wrangler
-.wrangler
-
-# Deploy artifacts
-deploy.zip
