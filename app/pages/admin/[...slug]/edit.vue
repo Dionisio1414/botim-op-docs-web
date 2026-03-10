@@ -124,7 +124,7 @@ onMounted(() => {
 
     <div v-else class="flex flex-1 overflow-hidden">
       <div :class="showPreview ? 'w-1/2 border-r border-(--ui-border)' : 'w-full'" class="flex flex-col">
-        <AdminMarkdownEditorClient v-model="content" class="flex-1" />
+        <AdminMonacoEditor v-model="content" class="flex-1" />
       </div>
       <div v-if="showPreview" class="w-1/2 overflow-y-auto p-6">
         <div class="prose prose-sm dark:prose-invert max-w-none">
